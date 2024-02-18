@@ -1,9 +1,9 @@
 public class Main {
 	public static void main(String[] args) {
-ExPerson();
+ExClock();
 	}
 	public static void ExClock(){
-		Clock c1 = new Clock();
+		Clock c1 = new Clock(0,0,0);
 		System.out.print("Enter Hour: ");
 		c1.setHour(c1.getInput());
 		System.out.print("Enter Minutes: ");
@@ -18,6 +18,13 @@ ExPerson();
 		System.out.println();
 		c1.reset();
 		c1.show();
+		System.out.println();
+		Clock c2 = new Clock(12,12,58);
+		c2.show();
+		System.out.println();
+		c2.tick();
+		c2.tick();
+		c2.show();
 	}
 	public static void ExCar(){
 		Car c1 = new Car();
@@ -74,6 +81,7 @@ ExPerson();
 		System.out.println("Arr after sort by wight : ");
 		showPersons(arr);
 	}
+
 	public static void showPersons(Person[] arr){
 		for (int i = 0; i < arr.length; i++) {
 			arr[i].show();

@@ -3,6 +3,12 @@ import java.util.Scanner;
 public class Clock {
 	private int seconds, minutes, hour;
 
+	public Clock(int hour, int minutes, int seconds){
+		System.out.println("|Enter new Clock|");
+		this.hour = hour;
+		this.minutes = minutes;
+		this.seconds = seconds;
+	}
 	public void reset() {
 		hour = 0;
 		minutes = 0;
@@ -26,58 +32,58 @@ public class Clock {
 	}
 
 	public void show() {
-		if (hour < 10) {
+		if (this.hour < 10) {
 			System.out.print("0");
 		}
-		System.out.print(hour + ":");
-		if (minutes < 10) {
+		System.out.print(this.hour + ":");
+		if (this.minutes < 10) {
 			System.out.print("0");
 		}
-		System.out.print(minutes + ":");
-		if (seconds < 10) {
+		System.out.print(this.minutes + ":");
+		if (this.seconds < 10) {
 			System.out.print("0");
 		}
-		System.out.print(seconds);
+		System.out.print(this.seconds);
 	}
 
-	public void setHour(int h) {
-		if (h >= 24) {
+	public void setHour(int hour) {
+		if (hour >= 24) {
 			int newH = 24;
-			hour = h - newH;
+			this.hour = hour - newH;
 		} else {
-			hour = h;
+			this.hour = hour;
 		}
 
 	}
 
-	public void setMinutes(int m) {
-		if (m >= 60) {
+	public void setMinutes(int minutes) {
+		if (minutes >= 60) {
 			int newM = 60;
-			minutes = m - newM;
+			this.minutes = minutes - newM;
 		} else {
-			minutes = m;
+			this.minutes = minutes;
 		}
 	}
 
-	public void setSeconds(int s) {
-		if (s >= 60) {
+	public void setSeconds(int seconds) {
+		if (seconds >= 60) {
 			int newS = 60;
-			seconds = s - newS;
+			this.seconds = seconds - newS;
 		} else {
-			seconds = s;
+			this.seconds = seconds;
 		}
 	}
 
 	public int getHour() {
-		return hour;
+		return this.hour;
 	}
 
 	public int getMinutes() {
-		return minutes;
+		return this.minutes;
 	}
 
 	public int getSeconds() {
-		return seconds;
+		return this.seconds;
 	}
 
 	public int getInput() {
